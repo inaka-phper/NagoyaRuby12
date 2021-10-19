@@ -1,11 +1,11 @@
 # 横へな　バス代
-問題
+問題  
 http://nabetani.sakura.ne.jp/hena/ord9busfare/
 
-Nagoya.php #12で行ったバス代問題のRuby版回答
+Nagoya.php #12で行ったバス代問題のRuby版回答  
 https://nagoyaphp.connpass.com/event/81154/
 
-php版の回答
+php版の回答  
 https://github.com/inaka-phper/NagoyaPhp12
 
 # usage
