@@ -14,17 +14,17 @@ class Pricing
   
   # @return [Integer]
   def to_price
-    if @passenger.is_pass || @passenger.is_free
+    if @passenger.pass? || @passenger.free?
       return 0
     end
     
     price = @section
     
-    if @passenger.is_child || @passenger.is_infant
+    if @passenger.child? || @passenger.infant?
       price = child(price)
     end
     
-    if @passenger.is_welfare
+    if @passenger.welfare?
       price = welfare(price)
     end
     

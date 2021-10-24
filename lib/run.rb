@@ -5,10 +5,10 @@ class Run
     @section = parser.section
     @passengers = parser.passengers
 
-    adults = @passengers.select { |passenger| passenger.is_adult }
+    adults = @passengers.select { |passenger| passenger.adult? }
 
     @passengers
-          .select { |passenger| passenger.is_infant }
+          .select { |passenger| passenger.infant? }
           .sort_by { |passenger| Pricing.new(@section, passenger).to_price }
           .reverse
           .take(adults.length * 2)
