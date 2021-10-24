@@ -13,7 +13,7 @@ class Pricing
   end
   
   # @return [Integer]
-  def to_price
+  def price
     if @passenger.pass? || @passenger.free?
       return 0
     end

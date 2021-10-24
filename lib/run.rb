@@ -9,7 +9,7 @@ class Run
 
     @passengers
           .select { |passenger| passenger.infant? }
-          .sort_by { |passenger| Pricing.new(@section, passenger).to_price }
+          .sort_by { |passenger| Pricing.new(@section, passenger).price }
           .reverse
           .take(adults.length * 2)
           .map { |passenger| passenger.set_free }
@@ -17,7 +17,7 @@ class Run
 
   def price
     @passengers
-          .map { |passenger| Pricing.new(@section, passenger).to_price }
+          .map { |passenger| Pricing.new(@section, passenger).price }
           .sum
   end
 end
