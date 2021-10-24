@@ -5,19 +5,19 @@ class Run
     @section = parser.section
     @passengers = parser.passengers
 
-    adults = @passengers.select { |passenger| passenger.isAdult }
+    adults = @passengers.select { |passenger| passenger.is_adult }
 
     @passengers
-          .select { |passenger| passenger.isInfant }
-          .sort_by { |passenger| Pricing.new(@section, passenger).toPrice }
+          .select { |passenger| passenger.is_infant }
+          .sort_by { |passenger| Pricing.new(@section, passenger).to_price }
           .reverse
           .take(adults.length * 2)
-          .map { |passenger| passenger.setFree }
+          .map { |passenger| passenger.set_free }
   end
 
   def price
     @passengers
-          .map { |passenger| Pricing.new(@section, passenger).toPrice }
+          .map { |passenger| Pricing.new(@section, passenger).to_price }
           .sum
   end
 end

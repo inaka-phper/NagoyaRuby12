@@ -6,39 +6,39 @@ class Passenger
     @free = false
   end
 
-  def isPass
+  def is_pass
     @pass
   end
 
-  def setFree
-    if isChild || isInfant
+  def set_free
+    if is_child || is_infant
       @free = true
     else
       raise ArgumentError.new('大人は無料に出来ません。')
     end
   end
 
-  def isFree
+  def is_free
     @free
   end
 
-  def isWelfare
+  def is_welfare
     @welfare
   end
 
-  def isNormal
+  def is_normal
     @pass && !@welfare
   end
 
-  def isChild
+  def is_child
     @type == 'C'
   end
 
-  def isAdult
+  def is_adult
     @type == 'A'
   end
 
-  def isInfant
+  def is_infant
     @type == 'I'
   end
 end
